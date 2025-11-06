@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": "cfc7",
+      "name": "Prashant",
+      "email": "p@p.p",
+      "password": "123"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "c414",
+      "title": "My First Task Updated",
+      "description": "Some Desc Updated",
+      "priority": "low",
+      "color": "teal",
+      "completed": false,
+      "userId": "cfc7",
+      "createdAt": "2025-10-28T17:19:16.309Z"
+    },
+    {
+      "id": "d78d",
+      "title": "Task 2",
+      "description": "Desc 2",
+      "priority": "high",
+      "color": "pink",
+      "completed": false,
+      "userId": "cfc7",
+      "createdAt": "2025-10-29T16:18:42.828Z"
+    },
+    {
+      "id": "db9e",
+      "title": "My First Task Updated",
+      "description": "Some Desc Updated",
+      "priority": "low",
+      "color": "teal",
+      "completed": false,
+      "userId": "cfc7",
+      "createdAt": "2025-10-29T16:19:00.877Z"
+    }
+  ],
+  "notes": []
+}

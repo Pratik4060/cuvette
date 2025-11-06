@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Shopping List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shopping List</h1>
+
+      <input type="text" id="item-name-input" placeholder="Enter item name" />
+      <input type="text" id="item-price-input" placeholder="Enter price" />
+
+      <button id="add-btn">Add</button>
+
+      <p id="error-message" class="error"></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Item Name</th>
+            <th>Item Price</th>
+          </tr>
+        </thead>
+        <tbody id="item-table-body">
+          <tr class="total">
+            <td>Grand Total</td>
+            <td data-ns-test="grandTotal">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

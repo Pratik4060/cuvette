@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const tableHeading = document.createElement("tr");
+
+    tableHeading.innerHTML = `
+
+  <th>Sr. No.</th>
+
+  <th>Title</th>
+
+  <th>Price</th>
+
+`;
+
+    /**
+
+ * Creates a table row from data.
+
+ * @param {Object} data - Data object containing index, name, and price.
+
+ * @returns {HTMLElement} Table row element.
+
+ */
+
+    function createRow(data) {
+      const tableRow = document.createElement("tr");
+
+      tableRow.innerHTML = `
+
+    <td>${data.index}</td>
+
+    <td data-ns-test="item-name">${data.name}</td>
+
+    <td data-ns-test="item-price">${data.price}</td>
+
+  `;
+
+      return tableRow;
+    }
+
+    /**
+
+ * Calculates and creates a table row for the total.
+
+ * @param {Array} data - Array of data objects.
+
+ * @returns {HTMLElement} Table row element.
+
+ */
+
+    function calculateTotal(data) {
+      const total = data.reduce(
+        (acc, current) => acc + parseInt(current.price),
+        0
+      );
+
+      const totalRow = document.createElement("tr");
+
+      totalRow.innerHTML = `
+
+    <td>Grand Total</td>
+
+    <td data-ns-test="grandTotal">${total}</td>
+
+  `;
+
+      return totalRow;
+    }
+
+    // Initialize data holder array
+
+    const dataHolder = [];
+
+    /**
+
+ * Submits a new item and updates the table.
+
+ */
+
+    function submitItem() {
+      const itemNameInput = document.getElementById("item-name-input");
+
+      const itemPriceInput = document.getElementById("item-price-input");
+
+      if (itemNameInput.value !== "" && itemPriceInput.value !== "") {
+        const newItem = {
+          index: dataHolder.length,
+
+          name: itemNameInput.value,
+
+          price: itemPriceInput.value,
+        };
+
+        dataHolder.push(newItem);
+
+        itemNameInput.value = "";
+
+        itemPriceInput.value = "";
+
+        // Update table
+
+        const table = document.getElementsByTagName("table")[0];
+
+        table.innerHTML = "";
+
+        table.appendChild(tableHeading);
+
+        dataHolder.forEach((item) => table.appendChild(createRow(item)));
+
+        table.appendChild(calculateTotal(dataHolder));
+      }
+    }
+  </script>
+</html>
